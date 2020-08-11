@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD5CCBAE24E21E76001DAB69 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA424E21E75001DAB69 /* Category+CoreDataClass.swift */; };
+		DD5CCBAF24E21E76001DAB69 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA524E21E75001DAB69 /* Category+CoreDataProperties.swift */; };
+		DD5CCBB024E21E76001DAB69 /* Tax+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA624E21E75001DAB69 /* Tax+CoreDataClass.swift */; };
+		DD5CCBB124E21E76001DAB69 /* Tax+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA724E21E75001DAB69 /* Tax+CoreDataProperties.swift */; };
+		DD5CCBB224E21E76001DAB69 /* Ranking+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA824E21E75001DAB69 /* Ranking+CoreDataClass.swift */; };
+		DD5CCBB324E21E76001DAB69 /* Ranking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBA924E21E76001DAB69 /* Ranking+CoreDataProperties.swift */; };
+		DD5CCBB424E21E76001DAB69 /* Variant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBAA24E21E76001DAB69 /* Variant+CoreDataClass.swift */; };
+		DD5CCBB524E21E76001DAB69 /* Variant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBAB24E21E76001DAB69 /* Variant+CoreDataProperties.swift */; };
+		DD5CCBB624E21E76001DAB69 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBAC24E21E76001DAB69 /* Product+CoreDataClass.swift */; };
+		DD5CCBB724E21E76001DAB69 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CCBAD24E21E76001DAB69 /* Product+CoreDataProperties.swift */; };
 		DDB8351C24E13EEF00913F10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351B24E13EEF00913F10 /* AppDelegate.swift */; };
 		DDB8351E24E13EEF00913F10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */; };
 		DDB8352024E13EEF00913F10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351F24E13EEF00913F10 /* ViewController.swift */; };
@@ -16,6 +26,8 @@
 		DDB8352B24E13EF200913F10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB8352924E13EF200913F10 /* LaunchScreen.storyboard */; };
 		DDB8353624E13EF300913F10 /* HeadyEcommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8353524E13EF300913F10 /* HeadyEcommerceTests.swift */; };
 		DDB8354124E13EF300913F10 /* HeadyEcommerceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8354024E13EF300913F10 /* HeadyEcommerceUITests.swift */; };
+		DDB8356A24E14CBB00913F10 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8356824E14CBB00913F10 /* CoreDataStack.swift */; };
+		DDB8356B24E14CBB00913F10 /* WebAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8356924E14CBB00913F10 /* WebAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD5CCBA424E21E75001DAB69 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD5CCBA524E21E75001DAB69 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD5CCBA624E21E75001DAB69 /* Tax+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tax+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD5CCBA724E21E75001DAB69 /* Tax+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tax+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD5CCBA824E21E75001DAB69 /* Ranking+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranking+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD5CCBA924E21E76001DAB69 /* Ranking+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ranking+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD5CCBAA24E21E76001DAB69 /* Variant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD5CCBAB24E21E76001DAB69 /* Variant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD5CCBAC24E21E76001DAB69 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD5CCBAD24E21E76001DAB69 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DDB8351824E13EEF00913F10 /* HeadyEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB8351B24E13EEF00913F10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +73,8 @@
 		DDB8353C24E13EF300913F10 /* HeadyEcommerceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadyEcommerceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB8354024E13EF300913F10 /* HeadyEcommerceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadyEcommerceUITests.swift; sourceTree = "<group>"; };
 		DDB8354224E13EF300913F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB8356824E14CBB00913F10 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DDB8356924E14CBB00913F10 /* WebAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +125,8 @@
 		DDB8351A24E13EEF00913F10 /* HeadyEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				DDB8356724E14CBB00913F10 /* Helpers */,
+				DDB8354E24E140EC00913F10 /* Model */,
 				DDB8351B24E13EEF00913F10 /* AppDelegate.swift */,
 				DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */,
 				DDB8351F24E13EEF00913F10 /* ViewController.swift */,
@@ -129,6 +155,32 @@
 				DDB8354224E13EF300913F10 /* Info.plist */,
 			);
 			path = HeadyEcommerceUITests;
+			sourceTree = "<group>";
+		};
+		DDB8354E24E140EC00913F10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CCBA424E21E75001DAB69 /* Category+CoreDataClass.swift */,
+				DD5CCBA524E21E75001DAB69 /* Category+CoreDataProperties.swift */,
+				DD5CCBA624E21E75001DAB69 /* Tax+CoreDataClass.swift */,
+				DD5CCBA724E21E75001DAB69 /* Tax+CoreDataProperties.swift */,
+				DD5CCBA824E21E75001DAB69 /* Ranking+CoreDataClass.swift */,
+				DD5CCBA924E21E76001DAB69 /* Ranking+CoreDataProperties.swift */,
+				DD5CCBAA24E21E76001DAB69 /* Variant+CoreDataClass.swift */,
+				DD5CCBAB24E21E76001DAB69 /* Variant+CoreDataProperties.swift */,
+				DD5CCBAC24E21E76001DAB69 /* Product+CoreDataClass.swift */,
+				DD5CCBAD24E21E76001DAB69 /* Product+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDB8356724E14CBB00913F10 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DDB8356824E14CBB00913F10 /* CoreDataStack.swift */,
+				DDB8356924E14CBB00913F10 /* WebAPIService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +316,20 @@
 			files = (
 				DDB8352024E13EEF00913F10 /* ViewController.swift in Sources */,
 				DDB8351C24E13EEF00913F10 /* AppDelegate.swift in Sources */,
+				DD5CCBAE24E21E76001DAB69 /* Category+CoreDataClass.swift in Sources */,
+				DD5CCBB424E21E76001DAB69 /* Variant+CoreDataClass.swift in Sources */,
+				DD5CCBB124E21E76001DAB69 /* Tax+CoreDataProperties.swift in Sources */,
+				DD5CCBB324E21E76001DAB69 /* Ranking+CoreDataProperties.swift in Sources */,
+				DD5CCBB524E21E76001DAB69 /* Variant+CoreDataProperties.swift in Sources */,
+				DD5CCBB024E21E76001DAB69 /* Tax+CoreDataClass.swift in Sources */,
+				DD5CCBB624E21E76001DAB69 /* Product+CoreDataClass.swift in Sources */,
 				DDB8352624E13EEF00913F10 /* HeadyEcommerce.xcdatamodeld in Sources */,
+				DDB8356A24E14CBB00913F10 /* CoreDataStack.swift in Sources */,
+				DD5CCBB224E21E76001DAB69 /* Ranking+CoreDataClass.swift in Sources */,
 				DDB8351E24E13EEF00913F10 /* SceneDelegate.swift in Sources */,
+				DDB8356B24E14CBB00913F10 /* WebAPIService.swift in Sources */,
+				DD5CCBB724E21E76001DAB69 /* Product+CoreDataProperties.swift in Sources */,
+				DD5CCBAF24E21E76001DAB69 /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heady.ecommerceiosapp.HeadyEcommerce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heady.ecommerceiosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heady.ecommerceiosapp.HeadyEcommerce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heady.ecommerceiosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
