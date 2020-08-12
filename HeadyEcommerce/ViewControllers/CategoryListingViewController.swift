@@ -12,6 +12,8 @@ import CoreData
 class CategoryListingViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate {
     
     @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var loaderView: UIActivityIndicatorView!
+    
     var arrCategories : [Category] = []
     var titleToDisplay : String = "Products"
     
@@ -20,9 +22,12 @@ class CategoryListingViewController: UIViewController , UITableViewDataSource ,U
         // Do any additional setup after loading the view.
         self.title = self.titleToDisplay
         self.categoryTableView.tableFooterView = UIView()
+        self.loaderView.isHidden = true         //Default hidden
         
         if (self.arrCategories.count == 0)
         {
+            self.loaderView.isHidden = false
+            
             //Hit the web API to fetch data from server
             let service = WebAPIService()
             service.getDataWith { (result) in
@@ -38,6 +43,7 @@ class CategoryListingViewController: UIViewController , UITableViewDataSource ,U
                         do {
                             self.arrCategories  = try context.fetch(fetchRequest) as! [Category]
                             self.categoryTableView.reloadData()
+                            self.loaderView.isHidden = true
                             
                             print("=================================================================")
                             print(self.arrCategories)
@@ -50,6 +56,7 @@ class CategoryListingViewController: UIViewController , UITableViewDataSource ,U
                     
                 case .Error(let message):
                     DispatchQueue.main.async {
+                        self.loaderView.isHidden = true
                         self.showAlertWith(title: "Error", message: message)
                     }
                 }

@@ -51,11 +51,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Y45-aW-YN7"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Weq-Rg-IBQ">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Weq-Rg-IBQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="G9G-z8-UQA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xbf-hv-MfK" secondAttribute="bottom" id="Jem-Qz-HFi"/>
                             <constraint firstItem="Xbf-hv-MfK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PBB-rC-sgK"/>
+                            <constraint firstItem="Weq-Rg-IBQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Wnh-tE-wuh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xbf-hv-MfK" secondAttribute="trailing" id="k8I-wj-GBV"/>
                             <constraint firstItem="Xbf-hv-MfK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lZe-B9-puk"/>
                         </constraints>
@@ -64,6 +69,7 @@
                     <navigationItem key="navigationItem" id="QJh-IH-oOQ"/>
                     <connections>
                         <outlet property="categoryTableView" destination="Xbf-hv-MfK" id="d5e-nF-JEc"/>
+                        <outlet property="loaderView" destination="Weq-Rg-IBQ" id="puS-71-40Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
