@@ -9,23 +9,48 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate {
+    
+    @IBOutlet weak var categoryTableView: UITableView!
+    var arrCategories : [Category] = []
+    var titleToDisplay : String = "Products"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "Products"
+        self.title = self.titleToDisplay
         
-        let service = WebAPIService()
-        service.getDataWith { (result) in
-            switch result {
-            case .Success(let data):
-                print(data)
-                self.clearAllData()
-                self.writeAllResponseToCoreData(dictionary: data)
-            case .Error(let message):
-                DispatchQueue.main.async {
-                    self.showAlertWith(title: "Error", message: message)
+        if (self.arrCategories.count == 0)
+        {
+            //Hit the web API to fetch data from server
+            let service = WebAPIService()
+            service.getDataWith { (result) in
+                switch result {
+                case .Success(let data):
+                    print(data)
+                    self.clearAllData()
+                    self.writeAllResponseToCoreData(dictionary: data)
+                    
+                    do {
+                        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Category.self))
+                        do {
+                            self.arrCategories  = try context.fetch(fetchRequest) as! [Category]
+                            self.categoryTableView.reloadData()
+                            
+                            print("=================================================================")
+                            print(self.arrCategories)
+                            print("=================================================================")
+                            
+                        } catch let error {
+                            print("ERROR FETCHING CATEGORIES : \(error)")
+                        }
+                    }
+                    
+                case .Error(let message):
+                    DispatchQueue.main.async {
+                        self.showAlertWith(title: "Error", message: message)
+                    }
                 }
             }
         }
@@ -175,20 +200,13 @@ class ViewController: UIViewController {
                     do {
                         let childCategoriesObjects = try context.fetch(fetchRequest2) as? [Category]
                         let subCategoriesInfo = NSSet(array: childCategoriesObjects!)
-                        srcCategoryObject?.subCategoryInfo = subCategoriesInfo
+                        srcCategoryObject?.addToSubCategoryInfo(subCategoriesInfo)
                     } catch let error {
                         print("ERROR FETCHING CHILD CATEGORIES: \(error)")
                     }
                 } catch let error {
                     print("ERROR FETCHING SOURCE CATEGORY: \(error)")
                 }
-            }
-            
-            do {
-                try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
-                print("PREM TESTING... Sub-Categories data saved to Core Data")
-            } catch let error {
-                print(error)
             }
         }
     }
@@ -235,12 +253,10 @@ class ViewController: UIViewController {
                 let variantsArray = variants as! NSArray
                 if variantsArray.count > 0
                 {
-                    let variantsSet : NSSet = []
                     for dict in variantsArray {
-                        let variantObj = self.createVariantEntityFrom(dictionary: dict as! [String : AnyObject])
-                        variantsSet.adding(variantObj!)
+                        let variantObj = self.createVariantEntityFrom(dictionary: dict as! [String : AnyObject]) as! Variant
+                        productEntity.addToProductVariantInfo(variantObj)
                     }
-                    productEntity.productVariantInfo = variantsSet
                 }
             }
             return productEntity
@@ -255,20 +271,21 @@ class ViewController: UIViewController {
         {
             categoryEntity.categoryId = dictionary["id"] as? Int64 ?? 0
             categoryEntity.categoryName = dictionary["name"] as? String
+            
 
             if let products = dictionary["products"]
             {
                 let productsArray = products as! NSArray
                 if productsArray.count > 0
                 {
-                    let productsSet : NSSet = []
                     for dict in productsArray {
-                        let productObj = self.createProductEntityFrom(dictionary: dict as! [String : AnyObject])
-                        productsSet.adding(productObj!)
+                        let productObj = self.createProductEntityFrom(dictionary: dict as! [String : AnyObject]) as! Product
+                        categoryEntity.addToCategoryProductsInfo(productObj)
                     }
-                    categoryEntity.categoryProductsInfo = productsSet
+                    CoreDataStack.sharedInstance.saveContext()
                 }
             }
+
             return categoryEntity
         }
         return nil
@@ -331,5 +348,43 @@ class ViewController: UIViewController {
             return rankingEntity
         }
         return nil
+    }
+    
+    // MARK: UITableViewDataSource and UITableViewDelegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.arrCategories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let categoryObject = self.arrCategories[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+        cell.nameLabel.text = categoryObject.categoryName
+        
+        if (categoryObject.categoryProductsInfo != nil && categoryObject.categoryProductsInfo!.count > 0)
+        {
+            cell.accessoryType = .none
+        }
+        else
+        {
+            cell.accessoryType = .disclosureIndicator
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let categoryObject = self.arrCategories[indexPath.row]
+        if (categoryObject.categoryProductsInfo != nil && categoryObject.categoryProductsInfo!.count > 0)
+        {
+            print("Show the Products screen")
+        }
+        else
+        {
+            print("Show the sub-categories screen")
+            let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+            vc.arrCategories = categoryObject.subCategoryInfo?.allObjects as! [Category]
+            vc.titleToDisplay = categoryObject.categoryName!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
