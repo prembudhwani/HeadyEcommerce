@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CategoryListingViewController.swift
 //  HeadyEcommerce
 //
 //  Created by Prem Budhwani on 10/08/20.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate {
+class CategoryListingViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate {
     
     @IBOutlet weak var categoryTableView: UITableView!
     var arrCategories : [Category] = []
@@ -19,6 +19,7 @@ class ViewController: UIViewController , UITableViewDataSource ,UITableViewDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = self.titleToDisplay
+        self.categoryTableView.tableFooterView = UIView()
         
         if (self.arrCategories.count == 0)
         {
@@ -228,7 +229,22 @@ class ViewController: UIViewController , UITableViewDataSource ,UITableViewDeleg
         if let variantEntity = NSEntityDescription.insertNewObject(forEntityName: "Variant", into: context) as? Variant {
             variantEntity.variantId = dictionary["id"] as? Int64 ?? 0
             variantEntity.variantColor = dictionary["color"] as? String
-            variantEntity.variantSize = dictionary["size"] as? String
+            if let varSize = dictionary["size"]
+            {
+                if (varSize is String)
+                {
+                    variantEntity.variantSize = (varSize as! String)
+                }
+                else if (varSize is Int)
+                {
+                    variantEntity.variantSize = "\(varSize)"
+                }
+            }
+            else
+            {
+                variantEntity.variantSize = "N/A"
+            }
+            
             variantEntity.variantPrice = dictionary["price"] as? Double ?? 0
             return variantEntity
         }
@@ -377,11 +393,14 @@ class ViewController: UIViewController , UITableViewDataSource ,UITableViewDeleg
         if (categoryObject.categoryProductsInfo != nil && categoryObject.categoryProductsInfo!.count > 0)
         {
             print("Show the Products screen")
+            let vc = self.storyboard?.instantiateViewController(identifier: "ProductListingViewController") as! ProductListingViewController
+            vc.categoryOfProducts = categoryObject
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else
         {
             print("Show the sub-categories screen")
-            let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+            let vc = self.storyboard?.instantiateViewController(identifier: "CategoryListingViewController") as! CategoryListingViewController
             vc.arrCategories = categoryObject.subCategoryInfo?.allObjects as! [Category]
             vc.titleToDisplay = categoryObject.categoryName!
             self.navigationController?.pushViewController(vc, animated: true)
