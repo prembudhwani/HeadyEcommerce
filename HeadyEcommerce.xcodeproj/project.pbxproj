@@ -18,9 +18,13 @@
 		DD79DF0224E3FE2800A5416C /* Variant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DEF824E3FE2800A5416C /* Variant+CoreDataProperties.swift */; };
 		DD79DF0324E3FE2800A5416C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DEF924E3FE2800A5416C /* Category+CoreDataClass.swift */; };
 		DD79DF0424E3FE2800A5416C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DEFA24E3FE2800A5416C /* Category+CoreDataProperties.swift */; };
+		DD79DF0724E4076500A5416C /* CategoryListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DF0624E4076500A5416C /* CategoryListingViewController.swift */; };
+		DD79DF0924E4078D00A5416C /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DF0824E4078D00A5416C /* ProductListingViewController.swift */; };
+		DD79DF0B24E4126B00A5416C /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DF0A24E4126B00A5416C /* ProductTableViewCell.swift */; };
+		DD79DF0D24E426B600A5416C /* VariantsListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DF0C24E426B600A5416C /* VariantsListingViewController.swift */; };
+		DD79DF0F24E427BE00A5416C /* VariantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79DF0E24E427BE00A5416C /* VariantTableViewCell.swift */; };
 		DDB8351C24E13EEF00913F10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351B24E13EEF00913F10 /* AppDelegate.swift */; };
 		DDB8351E24E13EEF00913F10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */; };
-		DDB8352024E13EEF00913F10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB8351F24E13EEF00913F10 /* ViewController.swift */; };
 		DDB8352324E13EEF00913F10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB8352124E13EEF00913F10 /* Main.storyboard */; };
 		DDB8352624E13EEF00913F10 /* HeadyEcommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDB8352424E13EEF00913F10 /* HeadyEcommerce.xcdatamodeld */; };
 		DDB8352824E13EF200913F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB8352724E13EF200913F10 /* Assets.xcassets */; };
@@ -60,10 +64,14 @@
 		DD79DEF824E3FE2800A5416C /* Variant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD79DEF924E3FE2800A5416C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DD79DEFA24E3FE2800A5416C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD79DF0624E4076500A5416C /* CategoryListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListingViewController.swift; sourceTree = "<group>"; };
+		DD79DF0824E4078D00A5416C /* ProductListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
+		DD79DF0A24E4126B00A5416C /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		DD79DF0C24E426B600A5416C /* VariantsListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantsListingViewController.swift; sourceTree = "<group>"; };
+		DD79DF0E24E427BE00A5416C /* VariantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantTableViewCell.swift; sourceTree = "<group>"; };
 		DDB8351824E13EEF00913F10 /* HeadyEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB8351B24E13EEF00913F10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDB8351F24E13EEF00913F10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDB8352224E13EEF00913F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDB8352524E13EEF00913F10 /* HeadyEcommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeadyEcommerce.xcdatamodel; sourceTree = "<group>"; };
 		DDB8352724E13EF200913F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,8 +116,20 @@
 			isa = PBXGroup;
 			children = (
 				DD37A76724E31921006CB152 /* CategoryTableViewCell.swift */,
+				DD79DF0A24E4126B00A5416C /* ProductTableViewCell.swift */,
+				DD79DF0E24E427BE00A5416C /* VariantTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		DD79DF0524E4072900A5416C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD79DF0624E4076500A5416C /* CategoryListingViewController.swift */,
+				DD79DF0824E4078D00A5416C /* ProductListingViewController.swift */,
+				DD79DF0C24E426B600A5416C /* VariantsListingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DDB8350F24E13EEF00913F10 = {
@@ -135,12 +155,12 @@
 		DDB8351A24E13EEF00913F10 /* HeadyEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				DD79DF0524E4072900A5416C /* ViewControllers */,
 				DD37A76624E31906006CB152 /* TableViewCell */,
 				DDB8356724E14CBB00913F10 /* Helpers */,
 				DDB8354E24E140EC00913F10 /* Model */,
 				DDB8351B24E13EEF00913F10 /* AppDelegate.swift */,
 				DDB8351D24E13EEF00913F10 /* SceneDelegate.swift */,
-				DDB8351F24E13EEF00913F10 /* ViewController.swift */,
 				DDB8352124E13EEF00913F10 /* Main.storyboard */,
 				DDB8352724E13EF200913F10 /* Assets.xcassets */,
 				DDB8352924E13EF200913F10 /* LaunchScreen.storyboard */,
@@ -326,8 +346,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD79DEFF24E3FE2800A5416C /* Ranking+CoreDataClass.swift in Sources */,
-				DDB8352024E13EEF00913F10 /* ViewController.swift in Sources */,
+				DD79DF0924E4078D00A5416C /* ProductListingViewController.swift in Sources */,
 				DD79DF0024E3FE2800A5416C /* Ranking+CoreDataProperties.swift in Sources */,
+				DD79DF0F24E427BE00A5416C /* VariantTableViewCell.swift in Sources */,
+				DD79DF0B24E4126B00A5416C /* ProductTableViewCell.swift in Sources */,
 				DD79DF0124E3FE2800A5416C /* Variant+CoreDataClass.swift in Sources */,
 				DD79DEFD24E3FE2800A5416C /* Tax+CoreDataClass.swift in Sources */,
 				DDB8351C24E13EEF00913F10 /* AppDelegate.swift in Sources */,
@@ -335,9 +357,11 @@
 				DD79DEFE24E3FE2800A5416C /* Tax+CoreDataProperties.swift in Sources */,
 				DD79DF0424E3FE2800A5416C /* Category+CoreDataProperties.swift in Sources */,
 				DD79DEFB24E3FE2800A5416C /* Product+CoreDataClass.swift in Sources */,
+				DD79DF0724E4076500A5416C /* CategoryListingViewController.swift in Sources */,
 				DD79DF0324E3FE2800A5416C /* Category+CoreDataClass.swift in Sources */,
 				DDB8356A24E14CBB00913F10 /* CoreDataStack.swift in Sources */,
 				DDB8351E24E13EEF00913F10 /* SceneDelegate.swift in Sources */,
+				DD79DF0D24E426B600A5416C /* VariantsListingViewController.swift in Sources */,
 				DDB8356B24E14CBB00913F10 /* WebAPIService.swift in Sources */,
 				DD37A76824E31921006CB152 /* CategoryTableViewCell.swift in Sources */,
 				DD79DF0224E3FE2800A5416C /* Variant+CoreDataProperties.swift in Sources */,

@@ -10,6 +10,11 @@ import UIKit
 
 class VariantTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
